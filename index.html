@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up Form - Anweshan</title>
+    <link rel = "stylesheet" href = "style.css">
+    <script src="https://kit.fontawesome.com/2f43ccfe7c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--Using the container tag in order to display an image in full screen.--> 
+<div class="container">
+    <!--Adding a box to add text and other input fields.-->
+    <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form>
+            <div class="input-group">
+                <div class="input-field" id="nameField">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password">
+                    <img src="eye-close.png" id="eyeicon">
+                </div>
+                <p style="color:#000">Forgot Password? <a href="reset-password.html">Click Here!</a></p>
+            </div>
+            <div class="btn-field">
+                <button type="button" id="signupBtn">Sign Up</button>
+                <button type="button" id="signinBtn" class="disable">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div> 
+
+<script>
+
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let title = document.getElementById("title");
+
+signinBtn.onclick = function(){
+    nameField.style.maxHeight = "0";
+    title.innerHTML = "Sign In";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+     // 👉 Redirect after sign-in
+    //  window.location.href = "adminDashboard.html";
+
+} 
+signupBtn.onclick = function(){
+    nameField.style.maxHeight = "60";
+    title.innerHTML = "Sign Up";
+    signupBtn.classList.remove("disable");
+    signinBtn.classList.add("disable");
+} 
+
+let eyeicon = document.getElementById("eyeicon");
+    let password = document.getElementById("password");
+
+    eyeicon.onclick = function(){
+    if (password.type == "password"){
+        password.type  = "text";
+        eyeicon.src = "eye-open.png";
+    }else{
+        password.type = "password";
+        eyeicon.src = "eye-close.png";
+    }
+}
+</script>
+</body>
+</html>
