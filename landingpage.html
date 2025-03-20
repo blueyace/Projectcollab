@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Anweshan</title>
+    <link rel = "stylesheet" href = "style.css">
+    <script src="https://kit.fontawesome.com/2f43ccfe7c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class = "header">
+        <nav class="navbar">
+            <div class="logo"><img src="LOGO.png" alt=""></div>
+            <a href="#" class="toggle-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Project Description</a></li>
+                    <li><a href="#">About the Team</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content-section">
+            <h1>AI/ML BASED<br>  SMART ATTENDANCE SYSTEM </h1>
+            <p> Automate and streamline attendance tracking with AI-powered face recognition and real-time analytics.
+            </p>
+            <div id="button">
+                <a href="index.html"> Register </a>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        const toggleBtn = document.getElementsByClassName("toggle-btn")[0]
+        const navmenu = document.getElementsByClassName("nav-menu")[0]
+        toggleBtn.addEventListener("click", () => {
+            navmenu.classList.toggle("active")
+        })
+    </script>
+</body>
+</html>
